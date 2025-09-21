@@ -1,22 +1,36 @@
-/*
- * Write a Java program (or method) that does the following:
- *
- * 1. Prompts the user to enter a positive integer n.
- *
- * 2. Then, n times, reads in three numbers 
- *    (they may be integers or real numbers).
- *
- * 3. For each set of three numbers, computes their sum, product, and average.
- *
- * 4. Prints out the results (one line per set).
- *
- * 5. After processing all n sets, the program ends.
- */
 
 import java.util.Scanner;
 
 public class SumProductAverage {
     public static void main(String[] args) {
-        // TODO
+
+        Scanner sc = new Scanner(System.in);
+
+        // obtain number of runs
+        System.out.print("How many times would you like to run the program? ");
+        int numRuns = sc.nextInt();
+        System.out.println();
+         
+        for (int j=0; j<numRuns; j++)
+        {
+            System.out.print("Enter three numbers:  ");
+            double num1 = sc.nextDouble();
+            double num2 = sc.nextDouble();
+            double num3 = sc.nextDouble();
+            System.out.println();
+
+            // compute and output sum
+            double sum = num1 + num2 + num3;
+            System.out.println("The sum of your numbers is " + sum);
+
+            // compute and output product
+            double prod = num1 * num2 * num3;
+            System.out.println("The product of your numbers is " + prod);
+
+            // compute and output average
+            double avg = sum / 3;
+            System.out.println("The average of your numbers is " + avg);
+            System.out.println();
+        }
     }
 }
